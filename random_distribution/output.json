@@ -1,0 +1,102 @@
+[
+    {
+        "name": "1",
+        "choice": 12,
+        "computedChoice": 12
+    },
+    {
+        "name": "2",
+        "choice": 6,
+        "computedChoice": 10
+    },
+    {
+        "name": "3",
+        "choice": 3,
+        "computedChoice": 1
+    },
+    {
+        "name": "4",
+        "choice": 16,
+        "computedChoice": 16
+    },
+    {
+        "name": "5",
+        "choice": 14,
+        "computedChoice": 14
+    },
+    {
+        "name": "6",
+        "choice": 12,
+        "computedChoice": 11
+    },
+    {
+        "name": "7",
+        "choice": 3,
+        "computedChoice": 3
+    },
+    {
+        "name": "8",
+        "choice": 13,
+        "computedChoice": 13
+    },
+    {
+        "name": "9",
+        "choice": 6,
+        "computedChoice": 6
+    },
+    {
+        "name": "10",
+        "choice": 19,
+        "computedChoice": 19
+    },
+    {
+        "name": "11",
+        "choice": 5,
+        "computedChoice": 5
+    },
+    {
+        "name": "12",
+        "choice": 7,
+        "computedChoice": 7
+    },
+    {
+        "name": "13",
+        "choice": 12,
+        "computedChoice": 15
+    },
+    {
+        "name": "14",
+        "choice": 3,
+        "computedChoice": 2
+    },
+    {
+        "name": "15",
+        "choice": 3,
+        "computedChoice": 9
+    },
+    {
+        "name": "16",
+        "choice": 18,
+        "computedChoice": 18
+    },
+    {
+        "name": "17",
+        "choice": 7,
+        "computedChoice": 8
+    },
+    {
+        "name": "18",
+        "choice": 15,
+        "computedChoice": 20
+    },
+    {
+        "name": "19",
+        "choice": 18,
+        "computedChoice": 17
+    },
+    {
+        "name": "20",
+        "choice": 4,
+        "computedChoice": 4
+    }
+]
