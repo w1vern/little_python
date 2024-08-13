@@ -2,7 +2,7 @@ import random
 import json
 
 countOfStudents = 20
-summOfMiss = 0
+sumOfMiss = 0
 
 class Student:
     def __init__(self, name, choice, computedChoice):
@@ -64,17 +64,17 @@ def getResult():
 
 
 def getClosest(choicesSet: set, choice: int):
-    global summOfMiss
+    global sumOfMiss
     min = countOfStudents
     res = -1
     for i in choicesSet:
         if abs(choice - i) < min:
             min = choice - i
             res = i
-    summOfMiss += abs(choice - res)
+    sumOfMiss += abs(choice - res)
     return res
 
 for i in range(100):
     initJson()
     getResult()
-print(summOfMiss/1000)
+print(sumOfMiss/1000)
