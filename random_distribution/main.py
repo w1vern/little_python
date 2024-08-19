@@ -77,4 +77,4 @@ def getClosest(choicesSet: set, choice: int):
 for i in range(100):
     initJson()
     getResult()
-print(sumOfMiss/1000)
+print(sumOfMiss/2000)
