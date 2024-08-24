@@ -1,8 +1,11 @@
 import random
 import json
+from munkres import Munkres
 
-countOfStudents = 20
-sumOfMiss = 0
+countOfStudents = 30
+sumOfMiss_1 = 0
+sumOfMiss_2 = 0
+
 
 class Student:
     def __init__(self, name, choice, computedChoice):
@@ -28,14 +31,17 @@ class Student:
     def from_json(json_str):
         data = json.loads(json_str)
         return Student.from_dict(data)
+
     @staticmethod
     def students_to_json(students):
         dict_list = [student.to_dict() for student in students]
         return json.dumps(dict_list, indent=4)
+
     @staticmethod
     def students_from_json(json_str):
         dict_list = json.loads(json_str)
         return [Student.from_dict(data) for data in dict_list]
+
 
 def initJson():
     arr = []
@@ -46,7 +52,7 @@ def initJson():
         file.write(Student.students_to_json(arr))
 
 
-def getResult():
+def solve_with_custom():
     with open('input.json', 'r') as file:
         data = file.read()
     arr = Student.students_from_json(data)
@@ -64,17 +70,38 @@ def getResult():
 
 
 def getClosest(choicesSet: set, choice: int):
-    global sumOfMiss
+    global sumOfMiss_1
     min = countOfStudents
     res = -1
     for i in choicesSet:
         if abs(choice - i) < min:
             min = choice - i
             res = i
-    sumOfMiss += abs(choice - res)
+    sumOfMiss_1 += abs(choice - res)
     return res
+
+
+def solve_with_Munkres():
+    m = Munkres()
+    with open('input.json', 'r') as file:
+        data = file.read()
+    arr = Student.students_from_json(data)
+    size = len(arr)
+    matrix = []
+    for i in range(size):
+        matrix.append([])
+        for j in range(size):
+            matrix[-1].append(abs(arr[i].choice-j-1))
+    result = m.compute(matrix)
+    global sumOfMiss_2
+    for i in range(size):
+        sumOfMiss_2 += abs(result[i][1] - arr[i].choice + 1)
+
 
 for i in range(100):
     initJson()
-    getResult()
-print(sumOfMiss/2000)
+    solve_with_custom()
+    solve_with_Munkres()
+print(sumOfMiss_1/2000)
+print(sumOfMiss_2/2000)
+

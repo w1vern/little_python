@@ -1,101 +1,151 @@
 [
     {
         "name": "1",
-        "choice": 12,
-        "computedChoice": 12
+        "choice": 23,
+        "computedChoice": 23
     },
     {
         "name": "2",
-        "choice": 6,
-        "computedChoice": 10
+        "choice": 26,
+        "computedChoice": 26
     },
     {
         "name": "3",
-        "choice": 3,
-        "computedChoice": 1
-    },
-    {
-        "name": "4",
-        "choice": 16,
-        "computedChoice": 16
-    },
-    {
-        "name": "5",
-        "choice": 14,
-        "computedChoice": 14
-    },
-    {
-        "name": "6",
-        "choice": 12,
-        "computedChoice": 11
-    },
-    {
-        "name": "7",
-        "choice": 3,
-        "computedChoice": 3
-    },
-    {
-        "name": "8",
-        "choice": 13,
-        "computedChoice": 13
-    },
-    {
-        "name": "9",
         "choice": 6,
         "computedChoice": 6
     },
     {
-        "name": "10",
-        "choice": 19,
-        "computedChoice": 19
+        "name": "4",
+        "choice": 10,
+        "computedChoice": 10
     },
     {
-        "name": "11",
-        "choice": 5,
+        "name": "5",
+        "choice": 13,
+        "computedChoice": 17
+    },
+    {
+        "name": "6",
+        "choice": 11,
+        "computedChoice": 16
+    },
+    {
+        "name": "7",
+        "choice": 24,
+        "computedChoice": 27
+    },
+    {
+        "name": "8",
+        "choice": 15,
+        "computedChoice": 22
+    },
+    {
+        "name": "9",
+        "choice": 24,
+        "computedChoice": 24
+    },
+    {
+        "name": "10",
+        "choice": 7,
         "computedChoice": 5
     },
     {
+        "name": "11",
+        "choice": 11,
+        "computedChoice": 11
+    },
+    {
         "name": "12",
+        "choice": 1,
+        "computedChoice": 1
+    },
+    {
+        "name": "13",
+        "choice": 10,
+        "computedChoice": 14
+    },
+    {
+        "name": "14",
         "choice": 7,
         "computedChoice": 7
     },
     {
-        "name": "13",
-        "choice": 12,
-        "computedChoice": 15
-    },
-    {
-        "name": "14",
-        "choice": 3,
+        "name": "15",
+        "choice": 4,
         "computedChoice": 2
     },
     {
-        "name": "15",
-        "choice": 3,
-        "computedChoice": 9
-    },
-    {
         "name": "16",
-        "choice": 18,
-        "computedChoice": 18
+        "choice": 5,
+        "computedChoice": 3
     },
     {
         "name": "17",
-        "choice": 7,
-        "computedChoice": 8
+        "choice": 24,
+        "computedChoice": 25
     },
     {
         "name": "18",
-        "choice": 15,
-        "computedChoice": 20
+        "choice": 3,
+        "computedChoice": 19
     },
     {
         "name": "19",
-        "choice": 18,
-        "computedChoice": 17
+        "choice": 21,
+        "computedChoice": 21
     },
     {
         "name": "20",
+        "choice": 12,
+        "computedChoice": 12
+    },
+    {
+        "name": "21",
+        "choice": 13,
+        "computedChoice": 13
+    },
+    {
+        "name": "22",
+        "choice": 28,
+        "computedChoice": 28
+    },
+    {
+        "name": "23",
+        "choice": 13,
+        "computedChoice": 15
+    },
+    {
+        "name": "24",
+        "choice": 19,
+        "computedChoice": 30
+    },
+    {
+        "name": "25",
+        "choice": 2,
+        "computedChoice": 20
+    },
+    {
+        "name": "26",
+        "choice": 9,
+        "computedChoice": 9
+    },
+    {
+        "name": "27",
+        "choice": 1,
+        "computedChoice": 18
+    },
+    {
+        "name": "28",
+        "choice": 4,
+        "computedChoice": 29
+    },
+    {
+        "name": "29",
+        "choice": 9,
+        "computedChoice": 8
+    },
+    {
+        "name": "30",
         "choice": 4,
         "computedChoice": 4
     }
