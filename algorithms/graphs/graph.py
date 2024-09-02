@@ -50,18 +50,18 @@ class Graph:
         def dfs(current_node: int, path: List[int]) -> List[int]:
             if current_node == node_to_find:
                 return path + [current_node]
-            if current_node in visited:
+            if current_node in set_of_checked:
                 return []
             
-            visited.add(current_node)
-            for neighbor in self.edges[current_node]:
-                if neighbor not in visited:
-                    result_path = dfs(neighbor, path + [current_node])
+            set_of_checked.add(current_node)
+            for node in self.edges[current_node]:
+                if node not in set_of_checked:
+                    result_path = dfs(node, path + [current_node])
                     if result_path:
                         return result_path
             return []
 
-        visited = set()
+        set_of_checked = set()
         return dfs(start_node, [])
 
     def __str__(self):
