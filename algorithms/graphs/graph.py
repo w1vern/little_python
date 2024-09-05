@@ -1,31 +1,29 @@
-from typing import Dict, Set, List, Any
-
 import queue
 
 
 class Graph:
     def __init__(self) -> None:
-        self.nodes: Set[int] = set()
-        self.edges: Dict[int, List[int]] = dict()
+        self.nodes: set[str] = set()
+        self.edges: dict[str, list[tuple[str, int]]] = dict()
 
-    def add_node(self, node: int) -> None:
+    def add_node(self, node: str) -> None:
         if node not in self.nodes:
             self.nodes.add(node)
             self.edges[node] = list()
 
-    def add_edge(self, node_1: int, node_2: int, unidirectional: bool = False) -> None:
+    def add_edge(self, node_1: str, node_2: str, weight: int = 1, unidirectional: bool = False) -> None:
         if node_1 in self.nodes and node_2 in self.nodes:
-            self.edges[node_1].append(node_2)
+            self.edges[node_1].append((node_2, weight))
             if not unidirectional:
-                self.edges[node_2].append(node_1)
+                self.edges[node_2].append((node_1, weight))
 
-    def get_nodes(self) -> Set[int]:
+    def get_nodes(self) -> set[str]:
         return self.nodes
 
-    def get_edges(self) -> Dict[int, List[int]]:
+    def get_edges(self) -> dict[str, list[tuple[str, int]]]:
         return self.edges
 
-    def breadth_first_search(self, node_to_find: int, start_node: int) -> int:
+    def breadth_first_search(self, node_to_find: str, start_node: str) -> int:
         if node_to_find not in self.nodes or start_node not in self.nodes:
             return -1
         queue_of_nodes = queue.Queue()
@@ -38,16 +36,16 @@ class Graph:
             if cur_node == node_to_find:
                 return path
             set_of_checked.add(cur_node)
-            for node in self.edges[cur_node]:
+            for node in list(map(lambda x: x[0], self.edges[cur_node])):
                 if not node in set_of_checked:
                     queue_of_nodes.put((node, path + 1))
         return -1
 
-    def depth_first_search(self, node_to_find: int, start_node: int) -> List[int]:
+    def depth_first_search(self, node_to_find: str, start_node: str) -> list[str]:
         if node_to_find not in self.nodes or start_node not in self.nodes:
             return []
         
-        def dfs(current_node: int, path: List[int]) -> List[int]:
+        def dfs(current_node: str, path: list[str]) -> list[str]:
             if current_node == node_to_find:
                 return path + [current_node]
             if current_node in set_of_checked:
@@ -63,6 +61,9 @@ class Graph:
 
         set_of_checked = set()
         return dfs(start_node, [])
+
+    def Dijkstra(self, node_to_find : str, start_node : str):
+        pass
 
     def __str__(self):
         return f"Nodes: {self.nodes}\nEdges: {self.edges}"
