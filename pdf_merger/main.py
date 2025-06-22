@@ -4,14 +4,17 @@ from PyPDF2 import PdfMerger
 
 merger = PdfMerger()
 
+dir = './pdf/'
+os.chdir(dir)
+
 pdf_files = sorted([f for f in os.listdir('.') if f.lower().endswith('.pdf')])
 
 for pdf in pdf_files:
-    print(f"Добавляется: {pdf}")
+    print(f"Added: {pdf}")
     merger.append(pdf)
 
 output_file = 'merged.pdf'
-merger.write(output_file)
+merger.write("../" + output_file)
 merger.close()
 
-print(f'\n✅ Все PDF объединены в файл: {output_file}')
+print(f'\n✅ All pdfs merged: {output_file}')
