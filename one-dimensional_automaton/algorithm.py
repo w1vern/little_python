@@ -10,15 +10,15 @@ from rich.style import Style
 
 class Computed:
 
-    def __init__(self, state: list[bool], function: Callable[[dict[bool]], bool], rang: int):
-        self.computer_buffer: list[bool] = [False] * self.Config.height*self.Config.width
+    def __init__(self, state: list[bool], function: Callable[[dict[int, bool]], bool], rang: int):
+        self.computer_buffer: list[bool] = [False] * self.Config.height*self.Config.width*2
         center_index=self.Config.width//2
         self.computer_buffer[center_index-len(state)//2:center_index+len(state)//2] = state
         def value_by_index(index: int, value: int, row: int) -> bool:
             if index + value >= self.Config.width or index+value < 0:
                 return False
             return self.computer_buffer[(row-1)*self.Config.width+index+value]
-        for i in range(1, self.Config.height):
+        for i in range(1, self.Config.height * 2):
             for j in range(self.Config.width):
                 neighbors = dict()
                 for k in range(rang*2+1):
@@ -30,7 +30,7 @@ class Computed:
 
     def get_str(self):
         display_buffer = ''
-        for i in range(0, self.Config.height):
+        for i in range(0, self.Config.height * 2):
             for j in range(self.Config.width):
                 if self.computer_buffer[i * self.Config.width + j]:
                     display_buffer += '#'
@@ -43,7 +43,7 @@ class Computed:
         color_enactive = Color.from_rgb(0, 0, 0)
         def get_color(i):
             return color_active if i else color_enactive
-        for i in range(1, self.Config.height, 2):
+        for i in range(1, self.Config.height*2, 2):
             for j in range(self.Config.width):
                 index_1 = self.computer_buffer[i * self.Config.width + j]
                 index_2 = self.computer_buffer[(i-1) * self.Config.width + j]
